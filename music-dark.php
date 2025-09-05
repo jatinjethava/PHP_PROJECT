@@ -93,13 +93,13 @@ if (isset($_GET['sing_up']) && !$_SESSION["user"]["email"]) {
                             <?php } ?>
 
                             <!-- Dark Mode Button -->
-                            <div class="darkmode-btn">
+                            <!-- <div class="darkmode-btn">
                                 <a href="index.php">
                                     <button class="rounded-pill" style="background-color: rgb(224, 224, 224);">
                                         <i class="fa-solid fa-cloud-sun" style="color: #000000;"></i>
                                     </button>
                                 </a>
-                            </div>
+                            </div> -->
                             <div style=" position: absolute; right:-5%;"><a href="./user/dashboard.php"
                                     class="text-dark"><i class="fa-solid fa-user fa-2x"></i></a>
                             </div>

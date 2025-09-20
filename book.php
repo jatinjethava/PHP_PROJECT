@@ -1,8 +1,24 @@
 <?php
 session_start();
+include("./database.php");
+
 if (!isset($_SESSION['user'])) {
-    echo "<script>alert('❌ Please login to book your Tickets.'); window.location.href='./login.php';</script>";
+    echo "<script>
+            alert('❌ Please login to book your Tickets.'); 
+            window.location.href='./login.php';
+        </script>";
     exit();
+}
+if (isset($_SESSION["user"]["email"])) {
+
+    $email = $_SESSION["user"]["email"];
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($row = $result->fetch_assoc()) {
+        $email = $row["email"] ?: $email;
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -92,7 +108,8 @@ if (!isset($_SESSION['user'])) {
         p {
             color: #666;
         }
-        .pos{
+
+        .pos {
             margin-right: 165px;
         }
     </style>
@@ -127,7 +144,8 @@ if (!isset($_SESSION['user'])) {
                     <!-- Email -->
                     <div class="mb-3">
                         <label class="form-label">Email Address</label>
-                        <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                        <input type="email" name="email" class="form-control" placeholder="Enter your email"
+                            value="<?php echo htmlspecialchars($email); ?>" readonly>
                     </div>
 
                     <!-- Event Selection -->

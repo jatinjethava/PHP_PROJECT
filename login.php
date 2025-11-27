@@ -391,6 +391,16 @@
 
 <body>
 
+    <a href="../index.php">
+        <div class="fixed-btn position-fixed p-3 rounded-circle overflow-hidden bg-primary shadow"
+            style="z-index: 1030; bottom: 20px; right: 20px; cursor: pointer;">
+
+            <div class="d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-arrow-left fa-2x" style="color: #ffffff; font-size: 1.2rem;"></i>
+            </div>
+        </div>
+    </a>
+
     <div class="bg-animation">
         <div class="wave"></div>
         <div class="wave"></div>
@@ -399,6 +409,8 @@
         <div class="music-note">♫</div>
         <div class="music-note">♪</div>
     </div>
+
+
 
     <div class="container">
         <div class="logo">

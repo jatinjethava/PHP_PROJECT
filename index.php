@@ -201,7 +201,7 @@ if (isset($_GET['sing_up']) && !$_SESSION["user"]["email"]) {
                 <div class="row gx-4 p-4">
 
                     <!-- Music Streaming -->
-                    <div data-aos="fade-up" data-aos-duration="800" class="col-12 col-md-6 col-lg-4">
+                    <!-- <div data-aos="fade-up" data-aos-duration="800" class="col-12 col-md-6 col-lg-4">
                         <div class="p-3 shadow p-3 mb-5 bg-body rounded bg-light zoom-card">
                             <div class="icon mx-auto text-center">
                                 <i class="fa-solid fa-music fs-1"></i>
@@ -212,7 +212,7 @@ if (isset($_GET['sing_up']) && !$_SESSION["user"]["email"]) {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Live Event Booking -->
                     <div data-aos="fade-up" data-aos-duration="1200" class="col-12 col-md-6 col-lg-4">
@@ -751,7 +751,7 @@ if (isset($_GET['sing_up']) && !$_SESSION["user"]["email"]) {
                         <div class="overflow-hidden rounded-3">
                             <img class="img-fluid" src="./image/team1.jpeg" alt="DJ SonicWave">
                         </div>
-                        <h3 class="mt-3">DJ SonicWave</h3>
+                        <h3 class="mt-3">nikhil dabhi</h3>
                         <i>Resident DJ & Music Curator</i>
                         <div class="d-flex justify-content-center social-icon gap-2 mt-3">
                             <a href="https://x.com/residentmusic" class="icon-1 rounded-circle border border-2 p-2"><i
@@ -775,7 +775,7 @@ if (isset($_GET['sing_up']) && !$_SESSION["user"]["email"]) {
                         <div class="overflow-hidden rounded-3">
                             <img class="img-fluid" src="./image/team2.jpeg" alt="Maya Groove">
                         </div>
-                        <h3 class="mt-3">Maya Groove</h3>
+                        <h3 class="mt-3">janavi jain</h3>
                         <i>Event & Booking Manager</i>
                         <div class="d-flex justify-content-center social-icon gap-2 mt-3">
                             <a href="https://x.com/bookingmanager" class="icon-1 rounded-circle border border-2 p-2"><i
@@ -798,7 +798,7 @@ if (isset($_GET['sing_up']) && !$_SESSION["user"]["email"]) {
                         <div class="overflow-hidden rounded-3">
                             <img class="img-fluid" src="./image/team3.jpeg" alt="Alex Beats">
                         </div>
-                        <h3 class="mt-3">Alex Beats</h3>
+                        <h3 class="mt-3">parth prajapati</h3>
                         <i>Producer & Sound Engineer</i>
                         <div class="d-flex justify-content-center social-icon gap-2 mt-3">
                             <a href="https://x.com/musicproducer01" class="icon-1 rounded-circle border border-2 p-2"><i
@@ -822,7 +822,7 @@ if (isset($_GET['sing_up']) && !$_SESSION["user"]["email"]) {
                         <div class="overflow-hidden rounded-3">
                             <img class="img-fluid" src="./image/team4.jpeg" alt="Lara Lights">
                         </div>
-                        <h3 class="mt-3">Lara Lights</h3>
+                        <h3 class="mt-3">sanskruti ramani</h3>
                         <i>Stage & Lighting Director</i>
                         <div class="d-flex justify-content-center social-icon gap-2 mt-3">
                             <a href="https://x.com/stagelights" class="icon-1 rounded-circle border border-2 p-2"><i
@@ -1047,7 +1047,7 @@ if (isset($_GET['sing_up']) && !$_SESSION["user"]["email"]) {
                         <div class="address mb-4">
                             <h5 class="text-dark">Studio & Office :</h5>
                             <p class="m-0 text-dark">BeatHub Music Studio</p>
-                            <p class="m-0 text-dark">123 Harmony Street, Los Angeles, CA</p>
+                            <p class="m-0 text-dark">123 hirabag, varachha road, surat</p>
                         </div>
                         <div class="phone mb-4">
                             <h5 class="text-dark">Booking & Support :</h5>
@@ -1056,8 +1056,8 @@ if (isset($_GET['sing_up']) && !$_SESSION["user"]["email"]) {
                         </div>
                         <div class="email mb-4">
                             <h5 class="text-dark">Email Us :</h5>
-                            <p class="m-0 text-dark">MusicBeat hub@beathub.com</p>
-                            <p class="m-0 text-dark">musicmanage@beathub.com</p>
+                            <p class="m-0 text-dark">musicbeathub@.com</p>
+                            <p class="m-0 text-dark">jatinjethava@gmail.com</p>
                         </div>
                     </div>
 
@@ -1107,7 +1107,7 @@ if (isset($_GET['sing_up']) && !$_SESSION["user"]["email"]) {
                         <!-- Brand & About -->
                         <div class="col-12 col-md-6 col-lg-3">
                             <div class="logo-img mb-4 zoom-card">
-                                <img src="images/music-logo.png" width="100%" alt="MusicBeat Hub Logo">
+                                <!-- <img src="images/music-logo.png" width="100%" alt="MusicBeat Hub Logo"> -->
                             </div>
                             <p class="text-white">
                                 MusicBeat Hub is your all-in-one platform to stream unlimited music and book tickets
@@ -1129,12 +1129,11 @@ if (isset($_GET['sing_up']) && !$_SESSION["user"]["email"]) {
                         <!-- Music Services -->
                         <div class="col-12 col-md-6 col-lg-3 footer-text">
                             <h4 class="title-text mb-3">Music Services</h4>
-                            <p>Unlimited Music Streaming</p>
                             <p>Exclusive Artist Releases</p>
-                            <p>Curated Playlists</p>
+                            <p>live booking</p>
                             <p>Podcast Streaming</p>
                             <p>Offline Listening</p>
-                            <p>High-Quality Audio</p>
+                            <p>easy to book</p>
                         </div>
 
                         <!-- Event Services -->
@@ -1155,10 +1154,10 @@ if (isset($_GET['sing_up']) && !$_SESSION["user"]["email"]) {
                         <!-- Contact & Newsletter -->
                         <div class="col-12 col-md-6 col-lg-3 last-col">
                             <h4 class="title-text mb-3">Contact Us</h4>
-                            <p><i class="fa-solid fa-location-dot" style="color: #ffffff;"></i> 101 Music Avenue, NY
-                                10001, USA</p>
-                            <p><i class="fa-solid fa-phone-volume" style="color: #ffffff;"></i> +1 (555) 234-5678</p>
-                            <p><i class="fa-solid fa-envelope" style="color: #ffffff;"></i> support@MusicBeat hub.com
+                            <p><i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>123 hirabag , varachha
+                                road , surat</p>
+                            <p><i class="fa-solid fa-phone-volume" style="color: #ffffff;"></i> +91 8160082638</p>
+                            <p><i class="fa-solid fa-envelope" style="color: #ffffff;"></i> misicbeat123@gmail.com
                             </p>
                             <h4 class="title-text mb-3">Newsletter</h4>
                             <p>Get the latest music releases and event updates straight to your inbox.</p>

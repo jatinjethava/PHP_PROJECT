@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
-    echo "<script>alert('❌ Please login to access your dashboard.'); window.location.href='../login.php';</script>";
+    echo "<script>alert('❌ Please login only user to access your dashboard.'); window.location.href='../login.php';</script>";
     exit();
 }
 

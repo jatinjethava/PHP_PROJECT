@@ -104,6 +104,10 @@ if (isset($_GET['sing_up']) && !$_SESSION["user"]["email"]) {
                             <div style=" position: absolute; right:-5%;"><a href="./user/dashboard.php"
                                     class="text-dark"><i class="fa-solid fa-user fa-2x"></i></a>
                             </div>
+
+                            <div style=" position: absolute; right:-8.5%;"><a href="./admin/admindashboard.php"
+                                    class="text-dark"><i class="fas fa-gear fa-2x"></i></a>
+                            </div>
                         </div>
 
                         <!-- Mobile Menu -->

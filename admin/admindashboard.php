@@ -1,6 +1,9 @@
 <?php
 session_start();
-
+if (!isset($_SESSION['admin'])) {
+    echo "<script>alert('❌ Please login only admin to access admin panel.'); window.location.href='../login.php';</script>";
+    exit();
+}
 include("../database.php");
 
 if (!isset($_SESSION["admin"])) {

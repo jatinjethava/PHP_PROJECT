@@ -42,17 +42,31 @@ if (isset($_GET["delete_number"])) {
     <style>
         body {
             background: #f1f1f1;
+            margin: 20px;
+        }
+
+        #admin_head {
+            color: #000000ff;
+            border-bottom: 1px solid #00000033;
+            padding-bottom: 10px;
+        }
+
+        #side {
+            border-right: 3px solid #00000014;
+            height: 100vh;
+            padding: 10px;
+            border-radius: 30px;
+            box-shadow: 1px 1px 10px #00000014;
         }
 
         .sidebar {
             height: 100vh;
-            background: #111827;
-            color: white;
+            color: black;
             padding-top: 20px;
         }
 
         .sidebar a {
-            color: white;
+            color: black;
             padding: 12px 20px;
             display: block;
             text-decoration: none;
@@ -60,7 +74,16 @@ if (isset($_GET["delete_number"])) {
         }
 
         .sidebar a:hover {
-            background: #1f2937;
+            background: #cacacaff;
+        }
+
+        #log {
+            margin-top: 130%;
+            transition: 0.3s ease;
+        }
+
+        #log:hover {
+            background: #e16767ff;
         }
 
         .card-box {
@@ -84,14 +107,14 @@ if (isset($_GET["delete_number"])) {
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 sidebar">
-                <h3 class="text-center mb-4">Our Group</h3>
+            <div id="side" class="col-md-3 sidebar">
+                <h3 id="admin_head" class="text-center mb-4">Our Group</h3>
                 <a href="admindashboard.php"><i class="fa-solid fa-gauge"></i> Admin Dashboard</a>
 
                 <br>
                 <?php
                 if (isset($_SESSION["admin"]["email"])) { ?>
-                    <a href="../request.php?logout=true" class="pos btn btn-danger mt-5"><i
+                    <a href="../request.php?logout=true" id="log" class="text-white btn btn-danger"><i
                             class="fa-solid fa-sign-out-alt"></i>
                         Logout</a>
                 <?php } ?>
@@ -117,14 +140,16 @@ if (isset($_GET["delete_number"])) {
                                     <td><?= $row['id'] ?></td>
                                     <td><?= $row['mobile_no'] ?></td>
 
-                                    <td class="d-flex flex-column gap-2 justify-content-center">
+                                    <td class="d-flex gap-2 justify-content-center">
                                         <a href="telegram.php?delete_number=<?= $row['mobile_no'] ?>"
                                             onclick="return confirm('Are you sure you want to delete this Member?');">
                                             <button class="btn btn-sm btn-outline-danger" name="delete_number">Delete
                                                 Member</button>
                                         </a>
-                                    </td>
 
+                                        <!-- <input type="checkbox" id="agreeBox"
+                                            onclick="if(this.checked){ this.disabled = true; }"> -->
+                                    </td>
                                 </tr>
                             <?php } ?>
                         </tbody>

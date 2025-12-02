@@ -31,17 +31,30 @@ $users = $conn->query("SELECT * FROM users ORDER BY id DESC LIMIT 10");
     <style>
         body {
             background: #f1f1f1;
+            margin: 20px;
+        }
+
+        #admin_head {
+            color: #000000ff;
+            border-bottom: 1px solid #00000033;
+            padding-bottom: 10px;
+        }
+
+        #side {
+            border-right: 3px solid #00000014;
+            height: 100vh;
+            border-radius: 30px;
+            box-shadow: 1px 1px 10px #00000014;
         }
 
         .sidebar {
             height: 100vh;
-            background: #111827;
-            color: white;
+            color: black;
             padding-top: 20px;
         }
 
         .sidebar a {
-            color: white;
+            color: black;
             padding: 12px 20px;
             display: block;
             text-decoration: none;
@@ -49,7 +62,16 @@ $users = $conn->query("SELECT * FROM users ORDER BY id DESC LIMIT 10");
         }
 
         .sidebar a:hover {
-            background: #1f2937;
+            background: #cacacaff;
+        }
+
+        #log {
+            margin-top: 100%;
+            transition: 0.3s ease;
+        }
+
+        #log:hover {
+            background: #e16767ff;
         }
 
         .card-box {
@@ -81,9 +103,9 @@ $users = $conn->query("SELECT * FROM users ORDER BY id DESC LIMIT 10");
     </a> -->
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3 sidebar">
-                <h3 class="text-center mb-4">Admin Dashboard</h3>
+        <div class="row main-container">
+            <div id="side" class="col-md-3 sidebar">
+                <h3 id="admin_head" class="text-center mb-4">Admin Dashboard</h3>
 
                 <a href="users.php"><i class="fa-solid fa-users"></i> Manage Users</a>
 
@@ -94,7 +116,7 @@ $users = $conn->query("SELECT * FROM users ORDER BY id DESC LIMIT 10");
                 <br>
                 <?php
                 if (isset($_SESSION["admin"]["email"])) { ?>
-                    <a href="../request.php?logout=true" class="pos btn btn-danger mt-5"><i
+                    <a href="../request.php?logout=true" id="log" class="text-white btn btn-danger"><i
                             class="fa-solid fa-sign-out-alt"></i>
                         Logout</a>
                 <?php } ?>

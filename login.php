@@ -436,7 +436,7 @@
         <div class="social-login">
             <button class="social-btn" onclick="socialLogin('google')">🎵 Google</button>
             <button class="social-btn" onclick="socialLogin('spotify')">🎶 Spotify</button>
-            <button class="social-btn" onclick="socialLogin('apple')">🍎 Apple</button>
+            <button class="social-btn" onclick="socialLogin('apple')">🎵 playit</button>
         </div>
 
         <div class="signup-link">

@@ -81,22 +81,29 @@ if (isset($_GET["delete_user"])) {
 
 <body>
 
-    <a href="../index.php">
+    <!-- <a href="../index.php">
         <div class="fixed-btn position-fixed p-3 rounded-circle bg-primary shadow"
             style="bottom: 20px; right: 20px; cursor: pointer;">
             <div class="d-flex justify-content-center align-items-center">
                 <i class="fa-solid fa-arrow-left" style="color:white;"></i>
             </div>
         </div>
-    </a>
+    </a> -->
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 sidebar">
                 <h3 class="text-center mb-4">User Manage</h3>
                 <a href="admindashboard.php"><i class="fa-solid fa-gauge"></i> Admin Dashboard</a>
-                <a href="../request.php?logout" class="pos btn btn-danger mt-5"><i class="fa-solid fa-sign-out-alt"></i>
-                    Logout</a>
+
+                <br>
+                <?php
+                if (isset($_SESSION["admin"]["email"])) { ?>
+                    <a href="../request.php?logout=true" class="pos btn btn-danger mt-5"><i
+                            class="fa-solid fa-sign-out-alt"></i>
+                        Logout</a>
+                <?php } ?>
+
             </div>
 
             <div class="col-md-9 p-4">

@@ -10,8 +10,6 @@ if (!isset($_SESSION["admin"])) {
 
 $total_users = $conn->query("SELECT COUNT(*) AS total FROM users")->fetch_assoc()["total"];
 
-// $today_log = $conn->query("SELECT COUNT(*) AS total FROM users ORDER BY id DESC LIMIT 10")->fetch_assoc()["total"];
-
 $today_log = $conn->query("SELECT COUNT(*) AS total FROM users WHERE DATE(last_login) = CURDATE()")->fetch_assoc()["total"];
 
 
@@ -70,14 +68,14 @@ $users = $conn->query("SELECT * FROM users ORDER BY id DESC LIMIT 10");
 
 <body>
 
-    <a href="../index.php">
+    <!-- <a href="../index.php">
         <div class="fixed-btn position-fixed p-3 rounded-circle bg-primary shadow"
             style="bottom: 20px; right: 20px; cursor: pointer;">
             <div class="d-flex justify-content-center align-items-center">
                 <i class="fa-solid fa-arrow-left" style="color:white;"></i>
             </div>
         </div>
-    </a>
+    </a> -->
 
     <div class="container-fluid">
         <div class="row">
@@ -87,8 +85,12 @@ $users = $conn->query("SELECT * FROM users ORDER BY id DESC LIMIT 10");
                 <a href="users.php"><i class="fa-solid fa-users"></i> Manage Users</a>
 
                 <br>
-                <a href="../request.php?logout" class="pos btn btn-danger mt-5"><i class="fa-solid fa-sign-out-alt"></i>
-                    Logout</a>
+                <?php
+                if (isset($_SESSION["admin"]["email"])) { ?>
+                    <a href="../request.php?logout=true" class="pos btn btn-danger mt-5"><i
+                            class="fa-solid fa-sign-out-alt"></i>
+                        Logout</a>
+                <?php } ?>
             </div>
 
             <div class="col-md-9 p-4">

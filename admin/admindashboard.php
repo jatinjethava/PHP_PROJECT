@@ -83,9 +83,13 @@ $users = $conn->query("SELECT * FROM users ORDER BY id DESC LIMIT 10");
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 sidebar">
-                <h3 class="text-center mb-4">Admin Panel</h3>
+                <h3 class="text-center mb-4">Admin Dashboard</h3>
 
                 <a href="users.php"><i class="fa-solid fa-users"></i> Manage Users</a>
+
+                <a href="user_query.php"><i class="fa-solid fa-user-shield"></i> User Query</a>
+
+                <a href="telegram.php"><i class="fa-brands fa-telegram"></i> Our Group</a>
 
                 <br>
                 <?php

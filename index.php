@@ -1040,8 +1040,8 @@ if (isset($_GET['sing_up']) && !$_SESSION["user"]["email"]) {
                 <!-- Title -->
                 <div class="title-text text-center mb-4">
                     <h1 class="fs-2">Get in Touch</h1>
-                    <p class="fs-6">We’d love to hear from you — whether it’s about your favorite track or your next big
-                        event</p>
+                    <p class="fs-6">We’d love to hear from you — whether it’s about your query. If you have any issues,
+                        please tell us right away.</p>
                 </div>
 
                 <div data-aos="fade-right" data-aos-duration="1500"

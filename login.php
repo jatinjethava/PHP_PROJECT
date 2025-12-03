@@ -426,17 +426,17 @@
                 <a href="user/forgot_password.php" class="forgot-password">Forgot Password?</a>
             </div>
 
-            <button type="submit" class="login-btn" name="login">Sign In</button>
+            <button type="submit" class="login-btn" name="login">Log In</button>
         </form>
 
         <div class="divider">
-            <span></span>
+            <span>Login To Vibes</span>
         </div>
 
         <div class="social-login">
-            <button class="social-btn">🎵 Google</button>
-            <button class="social-btn">🎶 Spotify</button>
-            <button class="social-btn">🎵 playit</button>
+            <button class="social-btn"> Manage your event bookings</button>
+            <button class="social-btn"> Grow your music network</button>
+            <button class="social-btn">Enjoy live orchestra </button>
         </div>
 
         <div class="signup-link">

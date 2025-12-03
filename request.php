@@ -49,6 +49,14 @@ if (isset($_POST["contact"])) {
     $date = $_POST['date'];
     $time = $_POST['time'];
     $number = $_POST['num'];
+    $regex = '/^[6-9]\d{9}$/';
+
+
+    if (!preg_match($regex, $number)) {
+        echo "<script>alert('❌ Invalid Mobile Number! Enter 10 digits starting with 6-9.'); 
+    window.history.back();</script>";
+        return;
+    }
 
     // Use parameterized query for security
     $user = $conn->prepare("INSERT INTO `booking` (`name`, `email`, `event`, `tickets`, `date`,`time`, `number`,`status`) VALUES (?, ?, ?, ?, ?, ?, ?, 'Pending')");
@@ -63,7 +71,7 @@ if (isset($_POST["contact"])) {
         echo "<script>alert('❌ Not submited: $errorMsg'); window.history.back();</script>";
         exit();
     }
-} elseif (isset($_POST["booking_update"])) {
+} else if (isset($_POST["booking_update"])) {
     $id = $_POST['id'];
     $name = $_POST['name'];
     $event = $_POST['event'];
@@ -71,12 +79,11 @@ if (isset($_POST["contact"])) {
     $time = $_POST['time'];
     $number = $_POST['num'];
     $tickets = $_POST['tickets'];
-    $satus = $_POST['status'];
 
 
     // Use parameterized query for security
-    $update = $conn->prepare("UPDATE booking SET name = ?,event = ?, tickets = ?, date = ?, time = ?, number = ?, status = ? WHERE id = ?");
-    $update->bind_param("ssississ", $name, $event, $tickets, $date, $time, $number, $satus, $id);
+    $update = $conn->prepare("UPDATE booking SET name = ?,event = ?,tickets = ?, date = ?, time = ?, number = ? WHERE id = ?");
+    $update->bind_param("ssissii", $name, $event, $tickets, $date, $time, $number, $id);
     $result = $update->execute();
 
     if ($result) {
@@ -87,7 +94,7 @@ if (isset($_POST["contact"])) {
         echo "<script>alert('❌ Not submited: $errorMsg'); window.history.back();</script>";
         exit();
     }
-} elseif (isset($_GET["id"])) {
+} else if (isset($_GET["id"])) {
     $id = intval($_GET['id']);
 
     $delete = $conn->prepare("DELETE FROM booking WHERE id = ?");

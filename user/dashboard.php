@@ -380,10 +380,16 @@ if (isset($_SESSION["user"]["email"])) {
                                                             <?= $booking['status'] ?></span>
                                                     </td>
                                                     <td class="d-flex flex-column gap-2 justify-content-center">
-                                                        <a
-                                                            href="./update_booking.php?id=<?php echo urlencode($booking['id']); ?>">
-                                                            <button class="btn btn-sm btn-outline-primary">Update</button>
-                                                        </a>
+
+                                                        <?php if ($booking['status'] == 'Rejected') { ?>
+
+                                                        <?php } else { ?>
+                                                            <a
+                                                                href="./update_booking.php?id=<?php echo urlencode($booking['id']); ?>">
+                                                                <button class="btn btn-sm btn-outline-primary">Update</button>
+                                                            </a>
+                                                        <?php } ?>
+
                                                         <a href="../request.php?id=<?php echo urlencode($booking['id']); ?>"
                                                             onclick="return confirm('Are you sure you want to delete this booking?');">
                                                             <button class="btn btn-sm btn-outline-danger"

@@ -430,13 +430,13 @@
         </form>
 
         <div class="divider">
-            <span>or continue with</span>
+            <span></span>
         </div>
 
         <div class="social-login">
-            <button class="social-btn" onclick="socialLogin('google')">🎵 Google</button>
-            <button class="social-btn" onclick="socialLogin('spotify')">🎶 Spotify</button>
-            <button class="social-btn" onclick="socialLogin('apple')">🎵 playit</button>
+            <button class="social-btn">🎵 Google</button>
+            <button class="social-btn">🎶 Spotify</button>
+            <button class="social-btn">🎵 playit</button>
         </div>
 
         <div class="signup-link">
@@ -457,18 +457,6 @@
                 passwordField.type = 'password';
                 toggleBtn.textContent = '👁️';
             }
-        }
-
-        function socialLogin(provider) {
-            // Add loading animation
-            event.target.style.transform = 'scale(0.95)';
-            event.target.style.opacity = '0.7';
-
-            setTimeout(() => {
-                event.target.style.transform = 'scale(1)';
-                event.target.style.opacity = '1';
-                alert(`Connecting to ${provider.charAt(0).toUpperCase() + provider.slice(1)}...`);
-            }, 200);
         }
 
         document.getElementById('loginForm').addEventListener('submit', function () {

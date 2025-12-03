@@ -113,6 +113,8 @@ $users = $conn->query("SELECT * FROM users ORDER BY id DESC LIMIT 10");
 
                 <a href="telegram.php"><i class="fa-brands fa-telegram"></i> Our Group</a>
 
+                <a href="bookingstatus.php"><i class="fa-solid fa-circle-check"></i> Booking Status</a>
+
                 <br>
                 <?php
                 if (isset($_SESSION["admin"]["email"])) { ?>

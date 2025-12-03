@@ -51,12 +51,12 @@ if (isset($_POST["contact"])) {
     $number = $_POST['num'];
 
     // Use parameterized query for security
-    $user = $conn->prepare("INSERT INTO `booking` (`name`, `email`, `event`, `tickets`, `date`,`time`, `number`) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $user = $conn->prepare("INSERT INTO `booking` (`name`, `email`, `event`, `tickets`, `date`,`time`, `number`,`status`) VALUES (?, ?, ?, ?, ?, ?, ?, 'Pending')");
     $user->bind_param("sssssss", $username, $email, $event, $tickets, $date, $time, $number);
     $result = $user->execute();
 
     if ($result) {
-        echo "<script>alert('✅ Booking confirmed!'); window.location.href='http://localhost:8081/PHP/PROJECT_PHP/';</script>";
+        echo "<script>alert('✅ Booking Is Done!'); window.location.href='http://localhost:8081/PHP/PROJECT_PHP/';</script>";
         exit();
     } else {
         $errorMsg = $user->error;
@@ -65,16 +65,18 @@ if (isset($_POST["contact"])) {
     }
 } elseif (isset($_POST["booking_update"])) {
     $id = $_POST['id'];
-    $event = $_POST['name'];
+    $name = $_POST['name'];
     $event = $_POST['event'];
     $date = $_POST['date'];
     $time = $_POST['time'];
     $number = $_POST['num'];
     $tickets = $_POST['tickets'];
+    $satus = $_POST['status'];
+
 
     // Use parameterized query for security
-    $update = $conn->prepare("UPDATE booking SET name = ?,event = ?, tickets = ?, date = ?, time = ?, number = ? WHERE id = ?");
-    $update->bind_param("ssissis", $name, $event, $tickets, $date, $time, $number, $id);
+    $update = $conn->prepare("UPDATE booking SET name = ?,event = ?, tickets = ?, date = ?, time = ?, number = ?, status = ? WHERE id = ?");
+    $update->bind_param("ssississ", $name, $event, $tickets, $date, $time, $number, $satus, $id);
     $result = $update->execute();
 
     if ($result) {
@@ -107,6 +109,14 @@ if (isset($_POST["contact"])) {
     $mobile = $_POST['mo'];
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirm-password'];
+    $regex = '/^[6-9]\d{9}$/';
+
+
+    if (!preg_match($regex, $mobile)) {
+        echo "<script>alert('❌ Invalid Mobile Number! Enter 10 digits starting with 6-9.'); 
+    window.history.back();</script>";
+        return;
+    }
 
     if ($password !== $confirmPassword) {
         echo "<script>alert('❌ Passwords do not match!'); 

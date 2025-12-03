@@ -100,6 +100,12 @@ if (!$booking) {
                         value="<?php echo $booking['tickets']; ?>" required>
                 </div>
 
+                <!-- <div class="mb-3">
+                    <label class="form-label">Re Bookimg Your Tickets</label>
+                    <input type="text" name="status" class="form-control" min="1" max="10" value="Book Again" required
+                        readonly>
+                </div> -->
+
                 <div class="text-center">
                     <button type="submit" name="booking_update" class="btn btn-success">
                         <i class="fa-solid fa-check"></i> Save Changes

@@ -32,7 +32,7 @@ if (isset($_SESSION["user"]["email"])) {
     }
 
     // Fetch from booking
-    $stmt = $conn->prepare("SELECT id,event, date, time, tickets, email FROM booking WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id,event, date, time, tickets, email , status FROM booking WHERE email = ?");
     if (!$stmt) {
         die("Prepare failed: " . $conn->error);
     }
@@ -212,6 +212,11 @@ if (isset($_SESSION["user"]["email"])) {
             color: #ef4444;
         }
 
+        .rebook {
+            background-color: #0d55fda9;
+            color: #ffffffff;
+        }
+
         .main {
             position: relative;
             min-height: 70vh;
@@ -361,7 +366,19 @@ if (isset($_SESSION["user"]["email"])) {
                                                     <td><?php echo $booking["date"]; ?></td>
                                                     <td><?php echo $booking["time"]; ?></td>
                                                     <td><?php echo $booking["tickets"]; ?></td>
-                                                    <td><span class="badge-status badge-confirmed">Confirmed</span></td>
+                                                    <td><span class="badge-status <?php
+                                                    if ($booking['status'] == 'Pending') {
+                                                        echo 'badge-pending';
+                                                    } elseif ($booking['status'] == 'Rejected') {
+                                                        echo 'badge-cancelled';
+                                                    } elseif ($booking['status'] == 'Confirmed') {
+                                                        echo 'badge-confirmed';
+                                                    } else {
+                                                        echo 'rebook';
+                                                    }
+                                                    ?>">
+                                                            <?= $booking['status'] ?></span>
+                                                    </td>
                                                     <td class="d-flex flex-column gap-2 justify-content-center">
                                                         <a
                                                             href="./update_booking.php?id=<?php echo urlencode($booking['id']); ?>">
